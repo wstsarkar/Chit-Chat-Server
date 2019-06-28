@@ -24,8 +24,8 @@ public class Server extends Thread {
 			System.out.println("New server initialized!");
 			this.userInput = null;
 			this.clients = Collections.synchronizedList(new ArrayList<ServerHandler>());
-			
-			// console reading thread
+
+
 			new Thread() {
 				public void run() {
 					BufferedReader console = new BufferedReader(
@@ -46,7 +46,9 @@ public class Server extends Thread {
 				}
 			}.start();
 			// client reading with accept() method thread start
+			
 			this.start();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
