@@ -104,8 +104,8 @@ public class Server extends Thread {
 
 	public void writeAllUnsendMessage(ServerHandler client) {
 		List<MSG> msgs = msgController.getAllUnsendMSG(client.getUserId());
-		for (int i = 0; i <msgs.size(); i++) {
-			MSG msg  = msgs.get(i);
+		for (int i = 0; i < msgs.size(); i++) {
+			MSG msg = msgs.get(i);
 			try {
 				if (client.isConnected()) {
 					client.getObjectOutputStream().writeObject(msg);
@@ -116,6 +116,7 @@ public class Server extends Thread {
 
 			} catch (IOException e) {
 				e.printStackTrace();
+				break;
 			}
 		}
 	}

@@ -7,12 +7,23 @@ import java.util.Date;
 public class DateUtils {
     private static final SimpleDateFormat FORMAT = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
 
-    public static Date parse(String date) throws ParseException {
-        return FORMAT.parse(date);
+    public static Date parse(String date){
+        try {
+			return FORMAT.parse(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+        return null;
     }
 
-    public static Date parse(String date, String format) throws ParseException {
-        return new SimpleDateFormat(format).parse(date);
+    public static Date parse(String date, String format){
+        try {
+			return new SimpleDateFormat(format).parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return null;
     }
 
     public static String format(Date date) {
