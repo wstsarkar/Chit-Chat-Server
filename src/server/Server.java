@@ -13,7 +13,6 @@ import java.util.List;
 import been.MSG;
 import utility.Common;
 
-
 public class Server extends Thread {
 	private ServerSocket server;
 	protected List<ServerHandler> clients;
@@ -26,12 +25,10 @@ public class Server extends Thread {
 			System.out.println("New server initialized!");
 			this.userInput = null;
 			this.clients = Collections.synchronizedList(new ArrayList<ServerHandler>());
-			
 
 			new Thread() {
 				public void run() {
-					BufferedReader console = new BufferedReader(
-							new InputStreamReader(System.in));
+					BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 					try {
 						while ((userInput = console.readLine()) != null) {
 							if (!userInput.isEmpty()) {
@@ -48,9 +45,9 @@ public class Server extends Thread {
 				}
 			}.start();
 			// client reading with accept() method thread start
-			
+
 			this.start();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
