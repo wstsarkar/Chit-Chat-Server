@@ -73,7 +73,7 @@ public class Server extends Thread {
 							}
 							if (!isSend) {
 								msg.setIs_send(0);
-								msgController.createUser(msg);
+								msgController.createMsg(msg);
 							}
 						}
 					}
@@ -93,11 +93,11 @@ public class Server extends Thread {
 				client.getObjectOutputStream().writeObject(msg);
 				client.getObjectOutputStream().flush();
 				msg.setIs_send(1);
-				msgController.createUser(msg);
+				msgController.createMsg(msg);
 			}
 		} catch (IOException e) {
 			msg.setIs_send(0);
-			msgController.createUser(msg);
+			msgController.createMsg(msg);
 			e.printStackTrace();
 		}
 	}
@@ -111,7 +111,7 @@ public class Server extends Thread {
 					client.getObjectOutputStream().writeObject(msg);
 					client.getObjectOutputStream().flush();
 					msg.setIs_send(1);
-					msgController.createUser(msg);
+					msgController.createMsg(msg);
 				}
 
 			} catch (IOException e) {

@@ -17,11 +17,11 @@ public class MsgController {
 		this.repository = new MsgRepository();
 	}
 
-	public int createUser(MSG msg){		
+	public int createMsg(MSG msg){		
 		return repository.createMSG(msg);
 	}
 
-	public int updateUser(MSG msg){		
+	public int updateMsg(MSG msg){		
 		return repository.updateMSG(msg);
 	}
 
