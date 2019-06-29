@@ -6,9 +6,11 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import been.MSG;
 import utility.Common;
 
 
@@ -24,7 +26,7 @@ public class Server extends Thread {
 			System.out.println("New server initialized!");
 			this.userInput = null;
 			this.clients = Collections.synchronizedList(new ArrayList<ServerHandler>());
-
+			
 
 			new Thread() {
 				public void run() {
