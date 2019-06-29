@@ -6,7 +6,7 @@ package utility;
  * 
  */
 public class Common {
-	public static final int Port = 2345;
+	public static final int Port = 5000;
 	
 	public static final String APP_NAME ="IIT Chit-Chat";
 
