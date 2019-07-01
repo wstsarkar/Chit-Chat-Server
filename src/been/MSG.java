@@ -24,6 +24,22 @@ public class MSG implements Serializable {
 	private int is_seen;
 	
 	private int is_hello_msg;
+	
+	public MSG(int is_hello_msg, int sender_user_id) {
+		this.message_id = 0;
+		this.message_type ="Hello";
+		this.message ="Hello";
+		this.sender_user_id = sender_user_id;
+		this.receiver_user_id = 0;
+		this.is_send = 0;
+		this.is_received = 0;
+		this.is_seen = 0;
+		this.is_hello_msg = 1;
+		
+	}
+	public MSG() {
+	}
+	
 
 	public int getMessage_id() {
 		return message_id;
@@ -145,6 +161,7 @@ public class MSG implements Serializable {
 		this.is_send = is_send;
 	}
 
+
 	public int getIs_hello_msg() {
 		return is_hello_msg;
 	}
@@ -153,6 +170,4 @@ public class MSG implements Serializable {
 		this.is_hello_msg = is_hello_msg;
 	}
 	
-	
-
 }

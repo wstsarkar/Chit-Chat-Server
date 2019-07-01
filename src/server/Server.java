@@ -103,6 +103,8 @@ public class Server extends Thread {
 	}
 
 	public void writeAllUnsendMessage(ServerHandler client) {
+
+		System.out.println("Client UserId :" +client.getUserId());
 		List<MSG> msgs = msgController.getAllUnsendMSG(client.getUserId());
 		for (int i = 0; i < msgs.size(); i++) {
 			MSG msg = msgs.get(i);
@@ -111,7 +113,8 @@ public class Server extends Thread {
 					client.getObjectOutputStream().writeObject(msg);
 					client.getObjectOutputStream().flush();
 					msg.setIs_send(1);
-					msgController.createMsg(msg);
+					msgController.updateMsg(msg);
+					
 				}
 
 			} catch (IOException e) {
